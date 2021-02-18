@@ -79,7 +79,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-console.log(reviews.name('Julius'));
+console.log(reviews[5].feedback);
 
 
 
@@ -89,7 +89,11 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-
+function addReview(array, name, rating, feedback){
+  array.push({name, rating, feedback});
+  return array;
+}
+console.log(addReview(reviews, 'Zachary', 5, "Idk"))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -98,8 +102,12 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
+function changeFeedback(array, index, newFeedback){
+  array[index].feedback = newFeedback;
+  return array;
+}
 
-
+console.log(changeFeedback(reviews, 7,"this place is chill with really cool people, great for getting work done on weekdays" ))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -116,7 +124,7 @@ Use the getReviewByIndex function below to do the following:
 function getReviewByIndex(array, number) {
   return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
 }
-console.log(getReviewByIndex(reviews, 4));
+console.log(getReviewByIndex(reviews,4));
 
   
 
@@ -132,10 +140,16 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array, last) {
+  let newArray = [];
+  for(let i = 0; i = array.length - 1; i++){
+    newArray.push(`${array[i].name} gave the restaurant a ${array[i].rating} star review, and their feedback was: ${array[i].feedback}`);
+  }
+  return newArray;
+  //last = reviews.length - 1;
+  //return `${array[last].name} gave the restaurant a ${array[last].rating} star review, and their feedback was: ${array[last].feedback}`
 } 
-
+console.log(getLastReview(reviews)
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
